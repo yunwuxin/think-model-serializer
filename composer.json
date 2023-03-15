@@ -1,0 +1,22 @@
+{
+    "name": "yunwuxin/think-model-serializer",
+    "description": "The Model Serializer Library For ThinkPHP",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "yunwuxin",
+            "email": "448901948@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "yunwuxin\\model\\": "src"
+        }
+    },
+    "require-dev": {
+        "topthink/think-orm": "*"
+    }
+}
