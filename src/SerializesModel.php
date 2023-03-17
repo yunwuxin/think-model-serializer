@@ -75,12 +75,12 @@ trait SerializesModel
             $value = $values[$name];
 
             if ($value instanceof ModelIdentifier) {
-                /** @var Model $model */
+                /** @var Model|\think\model\concern\SoftDelete $model */
                 $model = $value->class;
                 if (method_exists($model, 'withTrashed')) {
-                    $value = $model::withTrashed()->find($value->id);
+                    $value = $model::withTrashed()->findOrEmpty($value->id);
                 } else {
-                    $value = $model::find($value->id);
+                    $value = $model::findOrEmpty($value->id);
                 }
             }
 
